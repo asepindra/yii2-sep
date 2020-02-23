@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "asepindra\\yii2-sep\\": ""
+            "asepindra\\yii2-sep\\": "src"
         }
     },    
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }
-    },
+    }
 }
