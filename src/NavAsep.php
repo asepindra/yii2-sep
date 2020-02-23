@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\bootstrap;
+namespace asepindra\sep;
 
 use Yii;
 use yii\base\InvalidConfigException;
@@ -51,7 +51,7 @@ use yii\helpers\ArrayHelper;
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @since 2.0
  */
-class NavAsep extends Widget
+class NavAsep extends \yii\bootstrap\Widget
 {
     /**
      * @var array list of items in the nav widget. Each array element represents a single
@@ -127,7 +127,7 @@ class NavAsep extends Widget
         if ($this->dropDownCaret === null) {
             // $this->dropDownCaret = '<span class="caret"></span>';
         }
-        Html::addCssClass($this->options, ['widget' => 'nav']);
+        \yii\bootstrap\Html::addCssClass($this->options, ['widget' => 'nav']);
     }
 
     /**
@@ -135,7 +135,7 @@ class NavAsep extends Widget
      */
     public function run()
     {
-        BootstrapAsset::register($this->getView());
+        \yii\bootstrap\BootstrapAsset::register($this->getView());
         return $this->renderItems();
     }
 
@@ -152,7 +152,7 @@ class NavAsep extends Widget
             $items[] = $this->renderItem($item);
         }
 
-        return Html::tag('ul', implode("\n", $items), $this->options);
+        return \yii\bootstrap\Html::tag('ul', implode("\n", $items), $this->options);
     }
 
     /**
@@ -170,7 +170,7 @@ class NavAsep extends Widget
             throw new InvalidConfigException("The 'label' option is required.");
         }
         $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
-        $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
+        $label = $encodeLabel ? \yii\bootstrap\Html::encode($item['label']) : $item['label'];
         $options = ArrayHelper::getValue($item, 'options', []);
         $items = ArrayHelper::getValue($item, 'items');
         $url = ArrayHelper::getValue($item, 'url', '#');
@@ -198,10 +198,10 @@ class NavAsep extends Widget
         }
 
         if ($active) {
-            Html::addCssClass($options, 'active');
+            \yii\bootstrap\Html::addCssClass($options, 'active');
         }
 
-        return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);
+        return \yii\bootstrap\Html::tag('li', \yii\bootstrap\Html::a($label, $url, $linkOptions) . $items, $options);
     }
 
     /**
@@ -238,7 +238,7 @@ class NavAsep extends Widget
                 continue;
             }
             if (ArrayHelper::remove($items[$i], 'active', false) || $this->isItemActive($child)) {
-                Html::addCssClass($items[$i]['options'], 'active');
+                \yii\bootstrap\Html::addCssClass($items[$i]['options'], 'active');
                 if ($this->activateParents) {
                     $active = true;
                 }
@@ -248,7 +248,7 @@ class NavAsep extends Widget
                 $activeParent = false;
                 $items[$i]['items'] = $this->isChildActive($childItems, $activeParent);
                 if ($activeParent) {
-                    Html::addCssClass($items[$i]['options'], 'active');
+                    \yii\bootstrap\Html::addCssClass($items[$i]['options'], 'active');
                     $active = true;
                 }
             }
