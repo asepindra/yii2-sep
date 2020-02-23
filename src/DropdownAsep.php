@@ -32,7 +32,7 @@ use yii\helpers\ArrayHelper;
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @since 2.0
  */
-class DropdownAsep extends Widget
+class DropdownAsep extends \yii\bootstrap\Widget
 {
     /**
      * @var array list of menu items in the dropdown. Each array element can be either an HTML string,
