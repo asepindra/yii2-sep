@@ -9,7 +9,7 @@
     ],
     "homepage": "https://github.com/asepindra/yii2-sep",
     "type": "yii2-extension",
-    "license": "uintechno",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Asep Indra Syahyadi",
@@ -19,9 +19,14 @@
     ],
     "require": {
     },
+    "autoload": {
+        "psr-4": {
+            "asepindra\\yii2-sep\\": ""
+        }
+    },    
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }
-    }
+    },
 }
