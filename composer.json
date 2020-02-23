@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "asepindra\\yii2-sep\\": "src"
+            "asepindra\\sep\\": "src"
         }
     },    
     "extra": {
