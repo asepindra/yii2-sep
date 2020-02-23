@@ -256,6 +256,7 @@ class NavAsep extends \yii\bootstrap\Widget
         return $items;
     }
 
+
     /**
      * Checks whether a menu item is active.
      * This is done by checking if [[route]] and [[params]] match that specified in the `url` option of the menu item.
